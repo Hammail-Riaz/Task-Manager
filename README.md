@@ -160,6 +160,48 @@ task_manager/
 - 🔄 Database migrations handled with `Flask-Migrate`.  
 - 🌍 Can be scaled with MySQL/Postgres in production.
 
+  
+## 🚀 How to Run Locally
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Hammail-Riaz/Task-Manager.git
+   cd Task-Manager
+
+2. Create a virtual environment and install dependencies:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+3. Creating database
+   ```bash
+   flask db init
+   ```
+   This will initialize the db
+
+   ```bash
+   flask db migrate
+   ```
+   Make the schema changes 
+
+   ```bash
+   flask db upgrade
+   ```
+   Finalizes the schema changes
+
+
+4. Run the Flask app:
+   ```bash
+   python run.py
+   ```
+
+5. Then open in browser:
+
+   - http://127.0.0.1:5000
+
+
 ## 🌐 Visiting Live:
 - This app is live at https://hammailriaz.pythonanywhere.com .
 
