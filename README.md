@@ -160,8 +160,8 @@ task_manager/
 - 🔄 Database migrations handled with `Flask-Migrate`.  
 - 🌍 Can be scaled with MySQL/Postgres in production.
 
-🌐 Visiting Live:
-This app is live at https://hammailriaz.pythonanywhere.com .
+## 🌐 Visiting Live:
+- This app is live at https://hammailriaz.pythonanywhere.com .
 
 
 
