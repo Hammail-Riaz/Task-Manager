@@ -1,0 +1,239 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #f1f1f1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background: linear-gradient(90deg, #141432, #2b1f7a, #b30059);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #e0e0e0 !important;
+    font-weight: 500;
+    margin: 0 6px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00c2b2;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #00c2b2 !important;
+}
+
+/* ===== Content Container (unified) ===== */
+.content-container {
+    background: #1a1a2e;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;
+    background: linear-gradient(90deg, #b30059, #2b1f7a, #141432);
+    color: #cccccc;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Buttons ===== */
+.btn-custom {
+    background: linear-gradient(135deg, #2b1f7a, #b30059);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(135deg, #00c2b2, #2b1f7a);
+    transform: scale(1.04);
+}
+
+/* ===== Alerts ===== */
+.neon-alert.success {
+    background: #28a745; /* green */
+}
+
+.neon-alert.danger {
+    background: #dc3545; /* red */
+}
+
+.neon-alert.warning {
+    background: #ffc107; /* yellow */
+    color: #000; /* better contrast */
+}
+
+.neon-alert.info {
+    background: #17a2b8; /* cyan */
+}
+
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #b1767f;
+}
+
+h2 { font-size: 2.2rem; color: #7fffd4; }
+h3 { font-size: 1.8rem; color: #368067; }
+h4 { font-size: 1.5rem; color: #7fffd4; }
+h5 { font-size: 1.2rem; color: #6ec0a5; }
+
+h1:hover, h2:hover, h3:hover, h4:hover {
+    color: #ffe066;
+}
+
+/* ===== Tabs ===== */
+.tab-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tab-card:hover {
+    transform: scale(1.03);
+}
+
+.active-tab {
+    border: 2px solid #00c2b2;
+    box-shadow: 0 0 20px rgba(0, 194, 178, 0.7);
+}
+
+/* ===== Dropdown ===== */
+.custom-dropdown {
+    background-color: #1e1e2f;
+    color: #fff;
+    border: 2px solid #00d4ff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+}
+
+.custom-dropdown:hover {
+    border-color: #ff00d4;
+    box-shadow: 0 4px 14px rgba(255, 0, 212, 0.4);
+}
+
+.custom-dropdown:focus {
+    border-color: #ffdd00;
+    box-shadow: 0 0 10px rgba(255, 221, 0, 0.8);
+}
+
+.custom-dropdown option {
+    background-color: #2a2a3d;
+    color: #fff;
+    padding: 10px;
+}
+
+/* ===== Stats ===== */
+.stat-item {
+    min-width: 150px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #26263a;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    background: #30304a;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+/* ===== Misc ===== */
+.text-gradient {
+    background: none;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: inherit;
+}
+
+.username-highlight {
+    display: inline-block;
+    word-break: break-word;
+}
+/* ===== Responsive ===== */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.2rem; /* smaller but still bold */
+    }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    .btn-custom {
+        width: 100%; /* buttons full width on mobile */
+    }
+    .stat-item {
+        min-width: 100%; /* stack stats vertically */
+        margin-bottom: 12px;
+    }
+}
+@media (max-width: 576px) {
+    .d-flex.gap-2 {
+        flex-wrap: wrap; /* allow wrapping */
+    }
+
+    .btn-custom {
+        flex: 1 1 48%; /* each takes ~half width */
+    }
+}

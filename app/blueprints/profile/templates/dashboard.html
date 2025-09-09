@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}Task Manager - Dashboard{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-5">
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert neon-alert {{ category }} mb-3 text-center">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+    <!-- Welcome Card -->
+    <div class="content-container mx-auto p-5 mb-5 text-center" style="max-width: 900px;">
+        <h1 class="mb-3">
+            👋 Welcome, <span class="username-highlight">{{ user.username }}</span>
+        </h1>
+        <p class="fs-5">
+            This is your personal dashboard where you can <strong>create, view, and manage</strong> all your notes in
+            one place.
+            Stay organized and never miss a task! ✨
+        </p>
+    </div>
+
+    <!-- Dashboard Nav Links -->
+    <div class="mb-5 text-center">
+        <a href="{{ url_for('tasks.create') }}" class="btn btn-custom btn-lg mx-2 mb-3 dashboard-btn">➕ Create Tasks</a>
+        <a href="{{ url_for('tasks.view') }}" class="btn btn-custom btn-lg mx-2 mb-3 dashboard-btn">📄 View Tasks</a>
+    </div>
+
+    <!-- Task Statistics Summary -->
+    <div class="content-container p-5 mb-5 text-center">
+
+        <h2 class="mb-4">📊 Task Overview</h2>
+
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+
+            <div class="stat-item">
+                <h3 class="stat-number text-primary">{{ total_tasks }}</h3>
+                <a href="{{ url_for('tasks.view' , status='All') }}" class="nav-link">
+                    <p>📊 Total Tasks</p>
+                </a>
+            </div>
+
+            <div class="stat-item">
+                <h3 class="stat-number text-primary">{{ in_progress_tasks }}</h3>
+                <a href="{{ url_for('tasks.view' , status='In Progress') }}" class="nav-link">
+                    <p>⚡ In Progress</p>
+                </a>
+            </div>
+
+            <div class="stat-item">
+                <h3 class="stat-number text-info">{{ pending_tasks }}</h3>
+                <a href="{{ url_for('tasks.view' , status='Pending') }}" class="nav-link">
+                    <p>⏳ Pending</p>
+                </a>
+            </div>
+
+            <div class="stat-item">
+                <h3 class="stat-number text-danger">{{ cancelled_tasks }}</h3>
+                <a href="{{ url_for('tasks.view' , status='Cancelled') }}" class="nav-link">
+                    <p>❌ Cancelled</p>
+                </a>
+            </div>
+
+            <div class="stat-item">
+                <h3 class="stat-number text-success">{{ completed_tasks }}</h3>
+                <a href="{{ url_for('tasks.view' , status='Completed') }}" class="nav-link">
+                    <p>✅ Completed</p>
+                </a>
+            </div>
+
+            <div class="stat-item">
+                <h3 class="stat-number text-warning">{{ tasks_today_count }}</h3>
+                <a href="{{ url_for('tasks.view' , status='Created Today') }}" class="nav-link">
+                    <p>📅 Created Today</p>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    {% endblock %}

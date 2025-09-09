@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Task Manager - Home{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 mb-4 fw-bold">🏠 Welcome to Your Task Manager</h1>
+
+    {% if user.is_authenticated %}
+        <div class="alert alert-success shadow-lg neon-alert">
+            <strong>{{ user.username }}</strong> is currently logged in 🎉
+        </div>
+    {% else %}
+        <div class="alert neon-alert info mb-3 text-center">
+            ⚠️ No user is logged in currently
+        </div>
+    {% endif %}
+</div>
+
+<!-- Fun Facts Section -->
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="content-container p-4 text-center">
+            <h3 class="mb-3">🌀 Crazy Fact #1</h3>
+            <p>Honey never spoils. Archaeologists have found 3000-year-old honey in ancient Egyptian tombs that is still edible!</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="content-container p-4 text-center">
+            <h3 class="mb-3">🐱 Fun Fact #2</h3>
+            <p>Cats have over 20 muscles that control their ears — so yes, they’re secretly listening to all your secrets.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="content-container p-4 text-center">
+            <h3 class="mb-3">🌟 Fun Fact #3</h3>
+            <p>There are more possible iterations of a game of chess than atoms in the known universe. Mind blown!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Motivational / silly quotes -->
+<div class="row g-4 mt-4">
+    <div class="col-md-6">
+        <div class="content-container p-4 text-center">
+            <h4 >💡 Task Tip</h4>
+            <p>Procrastination is the art of keeping up with yesterday. Today’s tasks won’t finish themselves!</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="content-container p-4 text-center">
+            <h4 >🎯 Motivation</h4>
+            <p>“Even the tallest tower starts with a single brick.” – Every to-do you complete counts!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Random Fun Section -->
+<div class="content-container mt-4 p-4 text-center">
+    <h3 class="mb-3">🎉 Did You Know?</h3>
+    <p>Octopuses have three hearts, blue blood, and the ability to taste with their arms. Meanwhile, you just finished logging in. Impressive!</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+Problem: task management app to maange the user task
+features:
+    register |---
+    login    |----- (with Advance wtf forms)
+    logout   |---
+
+    dashboard
+    create tasks |----
+    delete tasks |------
+    update tasks |------- (should be stored in sqlite database)
+    view tasks   |------
+    mark tasks   |----
+
+    Advance UI 
+
+
+Computation Thinking:
+
+    1. Abtraction: 
+        user auth and crud ops
+
+    2. Decompostions:
+        using two blueprints i.e auth and task management
+
+    3. Pattern recognitions:
+        - database to stored data about user and task with models
+        - flask wtf cutom build forms
+        - blueprints for each tasks
+
+    Coding Phase
+
+
+
+
+
